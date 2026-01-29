@@ -1,3 +1,4 @@
+# function that counts percentage of each base in a sequence and returns dictionary with the data
 def base_percentage(sequence):
     a_count = sequence.count("A")
     t_count = sequence.count("T")
@@ -12,8 +13,11 @@ def base_percentage(sequence):
     
     return base_dict
 
+# imports Seq class from Bio.Seq library
 from Bio.Seq import Seq
 
+# creates a DNA sequence using Seq() class
 dna_sequence = Seq("GAACCGGGAGGTGGGAATCCGTCACATATGAGAAGGTATTTGCCCGATAA")
 
+# prints the results of function with given sequence as input
 print(base_percentage(dna_sequence))
