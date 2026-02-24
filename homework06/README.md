@@ -25,13 +25,13 @@ Below is information regarding how to run containerized code outside the contain
 ```bash
 docker run --rm -v $PWD:/data -u $(id -u):$(id -g) colinsedgwick/homework06:1.0 fasta_stats.py -l INFO -f /data/immune_proteins.fasta -o /data/immune_proteins_stats.txt
 ```  
-An image to run the container from must be specified in the docker run command. ```bash --rm ``` is used to remove the container after it is run.  
+An image to run the container from must be specified in the docker run command. ``` --rm ``` is used to remove the container after it is run.  
 ### Mounting data inside the container at runtime  
-Using ```bash -v $PWD:/data``` in you docker run command allows you to mount the input data from your working directory into /data within the container.  
+Using ``` -v $PWD:/data``` in you docker run command allows you to mount the input data from your working directory into /data within the container.  
 ### Running containerized code as specific user to avoid permission issues  
-Running the containerized code without specifying the user will cause the owner of all generated output files to be root, which can cause permission issues. You can specify the user and group ID namespace to yours using ```bash -u $(id -u):$(id -g)``` in your docker run command.  
+Running the containerized code without specifying the user will cause the owner of all generated output files to be root, which can cause permission issues. You can specify the user and group ID namespace to yours using ``` -u $(id -u):$(id -g)``` in your docker run command.  
 ### Parameters for each script  
-Each script takes specified parameters such as the path of the input file to be used in the execution of the script. Following the path of the script to be run, you can specify the parameter shorthand (e.g. ```bash -f ```) followed by the value (e.g. ```bash script.py ```). Here are the available parameters for each script:  
+Each script takes specified parameters such as the path of the input file to be used in the execution of the script. Following the path of the script to be run, you can specify the parameter shorthand (e.g. ``` -f ```) followed by the value (e.g. ``` script.py ```). Here are the available parameters for each script:  
 #### fasta_stats.py  
 ```bash
 # loglevel 
@@ -76,6 +76,6 @@ Each script takes specified parameters such as the path of the input file to be 
 ```  
 ## Output files and where to find them  
 The expected output files for running the containerized code on the given input files includes a TXT file of summary stats of the input FASTA file for fasta_stats.py, a FASTA file of proteins filtered for length from the input FASTA file for fasta_filter.py, a FASTQ file of sequencing reads filtered for average Phred score from the input FASTQ file for fastq_filter.py, and a JSON file containing summary stats of each chain within a protein structure from an input mmCIF file for mmcif_summary.py.  
-Each of these output files can be be found within your working directory after running the containerized code, as the working directory is mounted to /data within the container using the docker run command ```bash -v $PWD:/data ``` .
+Each of these output files can be be found within your working directory after running the containerized code, as the working directory is mounted to /data within the container using the docker run command ``` -v $PWD:/data ``` .
 
 
