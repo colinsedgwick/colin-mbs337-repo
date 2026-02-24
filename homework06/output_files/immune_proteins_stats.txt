@@ -1,0 +1,4 @@
+Num Sequences: 321
+Total Residues: 196434
+Longest Accession: P78527 (4128 residues)
+Shortest Accession: Q9HCY8 (104 residues)
