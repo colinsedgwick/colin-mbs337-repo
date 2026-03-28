@@ -1,4 +1,4 @@
-name: Integration tests with pytest
+name: Integration tests with pytest (homework08)
 on:
   push: 
     paths: 
@@ -25,6 +25,7 @@ jobs:
       run: pip3 install pytest==9.0.* requests==2.*
 
     - name: Run pytest
+      working-directory: ./homework08
       run: pytest
 
     - name: Stop images and clean up
