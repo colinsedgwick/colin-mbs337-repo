@@ -34,8 +34,8 @@ jobs:
       - name: Build and push image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./homework08
           push: true
-          file: ./Dockerfile
+          file: ./homework08/Dockerfile
           tags: ${{ steps.meta-data.outputs.tags }}
           labels: ${{ steps.meta-data.outputs.labels }}
