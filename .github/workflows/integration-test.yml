@@ -1,11 +1,8 @@
-name: Integration tests with pytest (homework08)
-on:
-  push: 
-    paths: 
-      - 'homework08/**'
+name: Integration tests with pytest
+on: [push]
 
 jobs:
-  integration-tests-with-pytest:
+  integration-tests-with-pytest-homework08:
     runs-on: ubuntu-latest
 
     steps:
