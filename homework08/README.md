@@ -9,7 +9,5 @@ The following commands can be run using targets defined in the Makefile to run a
 Produciton deployments are the version of the dashboard that is available to the public for use, whereas staging deployments are for developers to use in testing before release to the public. Staging deployments should be used when making changes to make sure they are ready for release, and then those changes can be updated and released in the production deployment.   
 ## GitHub Action Workflows   
 Using YAML files that define workflows within the .github/workflows directory in the root of the repository:   
-**integration-test.yml**   
-1. On every push to the GitHub repo, an integration test using pytest is used to confirm the dash app successfully runs.   
-**push-to-registry.yml**   
-2. Every time a new tag is pushed to the GitHub repo, a container image is automatically built and pushed to the GitHub Container Registry.  
+1. **integration-test.yml** On every push to the GitHub repo, an integration test using pytest is used to confirm the dash app successfully runs.   
+2. **push-to-registry.yml** Every time a new tag is pushed to the GitHub repo, a container image is automatically built and pushed to the GitHub Container Registry.   
